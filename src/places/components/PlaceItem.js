@@ -6,6 +6,8 @@ import Modal from 'react-bootstrap/Modal';
 import Button from "../../shared/componets/ui elements/Button";
 //import Map from "../../shared/componets/ui elements/Map";
 import { AuthContext } from "../../shared/componets/hooks/context/auth-context";
+import MapComponent from "../../shared/componets/ui elements/Map";
+
 
 const PlaceItem = (props) => {
 
@@ -18,6 +20,9 @@ const PlaceItem = (props) => {
 
   const closeMapHandler = () => setShowMap(false);
   const closeConfirmation = () => setshowConfirmation(false);
+
+  const apiKey = 'Yi4mEcQdVrHUljXoeTXlQa4Z8EDNpKZQMhCEq-BikHo';
+
 
   return (
     <React.Fragment>
@@ -35,9 +40,7 @@ const PlaceItem = (props) => {
       </Modal.Header>
       <Modal.Body>
       
-        <div className="map-container">
-          hi
-        </div>
+      <MapComponent apiKey={apiKey} zoom={15} center={props.coordinates}/>
         
       
       </Modal.Body>
